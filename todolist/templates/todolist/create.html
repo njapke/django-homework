@@ -50,54 +50,16 @@
           </div>
         </nav>
 		
-		<div class="container">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th class="col-md-8">Task</th>
-				<th class="col-md-4">Due</th>
-                <th class="col-md-2">Completion</th>
-                <th class="col-md-2"></th>
-                <th class="col-md-2"></th>
-              </tr>
-            </thead>
-			<!-- doppelte geschweifte klammern sind vars -->
-			{% if todos %}
-				<tbody>
-				{% for todo in todos %}
-					<tr>
-						<td>{{todo.id}}</td>
-						<td>{{todo.task}}</td>
-						<td>{{todo.due_date}}</td>
-						<td>{{todo.completion}}%</td>
-						<td>
-							<form>
-								<button type="button" class="btn btn-xs btn-info">Edit</button>
-							</form>
-						</td>
-						<td>
-							<form action= "{% url 'todolist:index' %}" method="POST">
-							{% csrf_token %}
-								<input type="hidden" name="delete" value="{{todo.id}}"/>
-								<button type="submit" class="btn btn-xs btn-danger">Delete</button>
-							</form>
-						</td>
-					</tr> 
-				{% endfor %}
-				</tbody>
-			{% else %}
-				<p>No todos are available.</p>
-			{% endif %}
-		 </table>
-		 
-            <a href="{% url 'todolist:create' %}" class="btn btn-lg btn-success">Create New TODO</a> <!--aus http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link  typ ist button und submit-->
-      
-		
+	  <div class="container">
+
+        <form method="post" action="{% url 'todolist:create' %}"> <!-- /create/ ok. or with url?-->
+		{% csrf_token %} <!-- meaning? -->
+            {{form}}
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+    </div>
 		
 	</body>
-
-
-
-
+	
 </html>
