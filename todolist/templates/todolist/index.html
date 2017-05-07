@@ -2,7 +2,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'todolist/style.css' %}" />
 
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -27,7 +26,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  
+
   <body style="padding-top: 60px;"> <!-- needs fix!!!-->
       <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
@@ -49,7 +48,7 @@
             </div><!--/.nav-collapse -->
           </div>
         </nav>
-		
+
 		<div class="container">
           <table class="table table-striped">
             <thead>
@@ -93,14 +92,6 @@
 				<p>No todos are available.</p>
 			{% endif %}
 		 </table>
-		 
             <a href="{% url 'todolist:create' %}" class="btn btn-lg btn-success">Create New TODO</a> <!--aus http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link  typ ist button und submit-->
-      
-		
-		
 	</body>
-
-
-
-
 </html>
