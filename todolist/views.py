@@ -4,7 +4,7 @@ from todolist.models import Todo #import nicht vergessen
 from django.template import loader
 from django.http import Http404
 from .forms import TodoForm, DeleteForm
-#from django.core.urlresolvers import reverse #import breaks everything
+from django import urls
 
 def index(request):
     if request.method == "POST":
@@ -42,7 +42,7 @@ def create(request):
             newTodo= Todo(task= taskd, due_date= dued, completion=completiond)
             newTodo.save()
 
-            return HttpResponseRedirect('/todolist') #do it like this. not with reverse. reverse breaks the web app
+            return HttpResponseRedirect(urls.reverse('todolist:index'))
         
     
     template = loader.get_template('todolist/create.html')

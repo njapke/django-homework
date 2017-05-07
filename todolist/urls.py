@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'), #/todolist/
     url(r'^(?P<todo_id>[0-9]+)/$', views.edit, name='edit'),
     url(r'^create',views.create,name='create'),
+    
 ]

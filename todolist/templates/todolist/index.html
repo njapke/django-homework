@@ -73,6 +73,9 @@
 						<td>{{todo.completion}}%</td>
 						<td>
 							<form>
+								<input type="hidden" name="task" value="{{todo.task}}"/>
+								<input type="hidden" name="due" value="{{todo.due_date}}"/>
+								<input type="hidden" name="completion" value="{{todo.completion}}"/>
 								<button type="button" class="btn btn-xs btn-info">Edit</button>
 							</form>
 						</td>
