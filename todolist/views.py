@@ -51,3 +51,7 @@ def create(request):
         'form': form,
     }
     return HttpResponse(template.render(context, request))
+
+def sitenotice(request):
+    return render(request, 'todolist/sitenotice.html')
+    
