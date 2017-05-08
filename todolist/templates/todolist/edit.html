@@ -52,15 +52,18 @@
 		
 	  <div class="container">
 
-        <form method="post" action="{% url 'todolist:create' %}"> <!-- /create/ ok. or with url?-->
-		{% csrf_token %} <!-- meaning? -->
+        <form method="post" action="{% url 'todolist:edit' todo.id %}"> <!-- /create/ ok. or with url?-->
+            {% csrf_token %} <!-- meaning? -->
+            {{ edit_form }}
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
+        <!--
         <ul>
             <li>{{ todo.task }}</li>
             <li>{{ todo.due_date }}</li>
             <li>{{ todo.completion }}</li>
         </ul>
+        -->
 
     </div>
 		
