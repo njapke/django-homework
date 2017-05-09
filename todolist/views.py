@@ -57,3 +57,6 @@ def create(request):
 
 def sitenotice(request):
     return render(request, 'todolist/sitenotice.html')
+
+def how_to(request):
+    return render(request, 'todolist/howto.html')
