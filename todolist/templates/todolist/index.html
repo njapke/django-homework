@@ -28,6 +28,7 @@
     </head>
 
     <body style="padding-top: 60px;"> <!-- needs fix!!!-->
+        <!--
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -45,9 +46,12 @@
                         <li><a href="howto.html">How to</a></li>
                         <li><a href="sitenotice.html">Site notice</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </nav>
+        -->
+
+        {% include 'todolist/nav.html' with active="index" %}
 
         <div class="container">
             <table class="table table-striped">

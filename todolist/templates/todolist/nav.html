@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">My To-Do List</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li {% if active == "index" %} class="active" {% endif %}><a href="{% url 'todolist:index' %}">Example list</a></li>
+                <li {% if active == "how_to" %} class="active" {% endif %}><a href="{% url 'todolist:how_to' %}">How to</a></li>
+                <li {% if active == "sitenotice" %} class="active" {% endif %}><a href="{% url 'todolist:sitenotice' %}">Site notice</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
