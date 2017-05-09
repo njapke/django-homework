@@ -71,14 +71,6 @@
 						<td>{{todo.due_date}}</td>
 						<td>{{todo.completion}}%</td>
 						<td>
-                            <!--
-							<form>
-								<input type="hidden" name="task" value="{{todo.task}}"/>
-								<input type="hidden" name="due" value="{{todo.due_date}}"/>
-								<input type="hidden" name="completion" value="{{todo.completion}}"/>
-								<button type="button" >Edit</button>
-							</form>
-                            -->
                             <a href="{% url 'todolist:edit' todo_id=todo.id %}" class="btn btn-xs btn-info">Edit</a>
 						</td>
 						<td>

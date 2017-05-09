@@ -9,5 +9,4 @@ urlpatterns = [
     url(r'^sitenotice.html', views.sitenotice, name='sitenotice'), #/sitenotice.html navbar/
     url(r'^(?P<todo_id>[0-9]+)/$', views.edit, name='edit'),
     url(r'^create',views.create,name='create'),
-    
 ]
