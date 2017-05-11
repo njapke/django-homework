@@ -32,13 +32,13 @@
 
         <div class="container">
             <form method="post" action="{% url 'todolist:create' %}"> <!-- /create/ ok. or with url?-->
-            {% csrf_token %} <!-- meaning? -->
-            {{form}}
-            <button type="submit" class="btn btn-default">Submit</button>
+                {% csrf_token %} <!-- meaning? -->
+                {{form}}
+                <button type="submit" class="btn btn-default">Submit</button>
             </form>
-			{% if input_error %}
-					{% include 'todolist/error.html' %}
-			{% endif %}	
+            {% if input_error %}
+                {% include 'todolist/error.html' %}
+            {% endif %}
         </div>
     </body>
 </html>

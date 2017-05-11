@@ -2,7 +2,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'todolist/style.css' %}" />
 
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -37,9 +36,9 @@
                 {{ edit_form }}
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-			{% if input_error %}
-					{% include 'todolist/error.html' %}
-			{% endif %}	
+            {% if input_error %}
+                {% include 'todolist/error.html' %}
+            {% endif %}
         </div>
     </body>
 </html>
