@@ -23,6 +23,7 @@ def index(request):
 
 def edit(request, todo_id):
     todo = get_object_or_404(Todo, pk=todo_id)
+    input_error = False
     if request.method == 'POST':
         form = TodoForm(request.POST)
         if form.is_valid():
@@ -31,11 +32,14 @@ def edit(request, todo_id):
             todo.completion = form.cleaned_data['completion']
             todo.save()
             return HttpResponseRedirect(urls.reverse('todolist:index'))
+        else:
+            input_error = True
 
     edit_form = TodoForm(initial={ 'task': todo.task, 'date': todo.due_date.strftime('%Y-%m-%d %H:%M'), 'completion': todo.completion })
-    return render(request, 'todolist/edit.html', { 'todo': todo, 'edit_form': edit_form })
+    return render(request, 'todolist/edit.html', { 'todo': todo, 'edit_form': edit_form, 'input_error':input_error })
 
 def create(request):
+    input_error = False
     if request.method == "POST":
         #compute data and either send to index or return error. maybe do this in index?
         form = TodoForm(request.POST)
@@ -45,13 +49,15 @@ def create(request):
             completiond = form.cleaned_data['completion']
             newTodo= Todo(task= taskd, due_date= dued, completion=completiond)
             newTodo.save()
-
             return HttpResponseRedirect(urls.reverse('todolist:index'))
+        else:
+            input_error = True
 
     template = loader.get_template('todolist/create.html')
     form= TodoForm()    #neue todoform wird zur eingabe erstellt
     context = {
         'form': form,
+        'input_error':input_error,
     }
     return HttpResponse(template.render(context, request))
 
